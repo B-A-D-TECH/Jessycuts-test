@@ -1,0 +1,360 @@
+/* ================= RESET ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLES ================= */
+
+:root {
+  --gold: #d8b26a;
+  --brown: #c8a48a;
+  --dark: #1e1e1e;
+  --light: #f5f5dc;
+}
+
+/* ================= HEADER BACKGROUND ================= */
+p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  /* margin-bottom: 70px; */
+}
+/* .header {
+  background-image: url("Image/maquettejessycuts.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+} */
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2px 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+
+  z-index: 999;
+}
+
+/* Logo */
+.logo {
+  width: 190px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Liens */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+
+  color: var(--gold);
+
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+
+/* ================= CONTACT SECTION ================= */
+
+.contact {
+  padding: 140px 8% 100px;
+
+  background: linear-gradient(
+    to bottom,
+    #111,
+    #1c1c1c
+  );
+
+  color: #fff;
+
+  text-align: center;
+}
+
+/* Titre principal */
+.contact h1 {
+  font-size: 46px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* Sous-titre */
+.contact-subtitle {
+  color: #c8a48a;
+  margin-bottom: 70px;
+  font-size: 18px;
+}
+
+/* ================= CARTES CONTACT ================= */
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+}
+
+/* Carte individuelle */
+.contact-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+
+  padding: 40px 25px;
+
+  border-radius: 22px;
+
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+
+  transition: all 0.35s ease;
+
+  cursor: pointer;
+}
+
+/* Hover premium */
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.02);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.7),
+    0 0 25px rgba(200,164,138,0.6);
+}
+
+/* Icône */
+.contact-card i {
+  font-size: 46px;
+  color: #d8b26a;
+  margin-bottom: 18px;
+}
+
+/* Titre carte */
+.contact-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Texte */
+.contact-card p {
+  color: #ddd;
+  font-size: 18px;
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials {
+  padding: 100px 8%;
+
+  background: linear-gradient(
+    to bottom,
+    #1c1c1c,
+    #111
+  );
+
+  text-align: center;
+
+  color: white;
+}
+
+.testimonials h2 {
+  font-size: 46px;
+  margin-bottom: 60px;
+}
+
+/* Grille avis */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+/* Carte avis */
+.testimonial {
+  background: rgba(255,255,255,0.05);
+
+  padding: 35px 30px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+
+  transition: 0.35s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.6),
+    0 0 18px rgba(216,178,106,0.5);
+}
+
+/* Texte avis */
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* Etoiles */
+.stars {
+  color: gold;
+  font-size: 18px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: black;
+  padding: 30px;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Lien email flottant
+.email-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #6c757d;
+  color: #f1dd20;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  z-index: 1000;
+  transition: background 0.3s ease;
+} */
+
+/* .email-link:hover {
+  background: #5a6268;
+} */
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .contact h1 {
+    font-size: 34px;
+  }
+
+  .testimonials h2 {
+    font-size: 30px;
+  }
+
+}
+/* ================= HAMBURGER ================= */
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger actif (croix) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu mobile */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.95);
+  padding-top: 100px;
+  text-align: center;
+  gap: 40px;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.nav-links.open li a {
+  font-size: 24px;
+  color: var(--gold);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  
+  .hamburger {
+    display: flex;
+    margin-left: 160px;
+    padding-right: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    transform: translateX(100%);
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .contact h1 {
+    font-size: 28px;
+  }
+}

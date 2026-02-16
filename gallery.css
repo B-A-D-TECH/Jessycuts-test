@@ -1,0 +1,558 @@
+
+/* ================= RESET ================= */
+/* Réinitialisation des marges et padding par défaut pour une base cohérente */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= VARIABLES ================= */
+/* Définition des variables CSS pour les couleurs */
+
+:root {
+  --gold: #d8b26a;
+  --brown: #c8a48a;
+  --dark: #1e1e1e;
+  --light: #f5f5dc;
+}
+
+/* ================= HEADER BACKGROUND ================= */
+
+.header {
+  background-image: url("Image/maquettejessycuts.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 2px 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+
+  z-index: 999;
+}
+
+/* Logo */
+.logo {
+  width: 190px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Liens */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+
+  color: var(--gold);
+
+  letter-spacing: 1px;
+
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/*********************************************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top, #111, #000);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery {
+    padding: 140px 0 100px;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(45deg, #000, #111, #000, #111);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 20%; }
+    20% { background-position: 40% 10%; }
+    10% { background-position: 0% 20%; }
+}
+
+.gallery h1 {
+    font-size: 46px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 1px var(--gold), 0 0 10px var(--gold), 0 0 10px var(--gold);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold), 0 0 60px var(--gold); }
+    to { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
+}
+
+.gallery p {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 80px;
+}
+
+/* ===== CINEMA ===== */
+.cinema {
+    perspective: 1200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.cinema-track {
+    display: flex;
+    gap: 60px;
+    padding-left: 10%;
+    width: max-content;
+    will-change: transform;
+}
+
+.cinema-prev, .cinema-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: var(--gold);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.cinema-prev:hover, .cinema-next:hover {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--gold);
+}
+
+.cinema-prev {
+    left: 20px;
+}
+
+.cinema-next {
+    right: 20px;
+}
+
+.frame {
+    width: 320px;
+    height: 420px;
+    flex-shrink: 0;
+    border-radius: 25px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* profondeur */
+.frame {
+    transform: rotateY(-12deg) translateZ(0);
+}
+
+.frame:hover {
+    transform: rotateY(0deg) scale(1.08);
+    box-shadow: 0 60px 120px rgba(0,0,0,0.8), 0 0 20px var(--gold);
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    text-align: center;
+    max-width: 90%;
+    animation: fadeUp 0.4s ease;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 20px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8);
+    margin-bottom: 25px;
+}
+
+.lightbox-content h2 {
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.lightbox-content p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+/* Responsive Styles */
+
+/* Tablet */
+@media(max-width:1024px){
+    .frame{
+        width: 280px;
+        height: 370px;
+    }
+    
+    .cinema-track{
+        gap: 40px;
+    }
+    
+    .gallery h1{
+        font-size: 46px;
+    }
+}
+
+/* Mobile Landscape */
+@media(max-width:768px){
+    .frame{
+        width: 240px;
+        height: 320px;
+    }
+    
+    .cinema-track{
+        gap: 30px;
+        padding-left: 5%;
+    }
+    
+    .gallery{
+        padding: 140px 0 100px;
+    }
+    
+    .gallery h1{
+        font-size: 34px;
+        letter-spacing: 4px;
+    }
+    
+    .gallery p{
+        margin-bottom: 50px;
+        font-size: 14px;
+    }
+    
+    .cinema-prev, .cinema-next{
+        display: none;
+    }
+    
+    .lightbox-content h2{
+        font-size: 1.5rem;
+    }
+    
+    .lightbox-content p{
+        font-size: 1rem;
+    }
+    
+    .close{
+        font-size: 2.5rem;
+        top: 20px;
+        right: 25px;
+    }
+}
+
+/* Mobile Portrait */
+@media(max-width:480px){
+    .frame{
+        width: 200px;
+        height: 270px;
+    }
+    
+    .cinema-track{
+        gap: 20px;
+    }
+    
+    .gallery h1{
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    
+    .gallery p{
+        margin-bottom: 40px;
+        font-size: 13px;
+    }
+    
+    .cinema-prev, .cinema-next{
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+    
+    .lightbox-content img{
+        max-height: 50vh;
+    }
+    
+    .lightbox-content h2{
+        font-size: 1.3rem;
+    }
+}
+
+/* Small Mobile */
+@media(max-width:360px){
+    .frame{
+        width: 180px;
+        height: 240px;
+    }
+    
+    .gallery h1{
+        font-size: 28px;
+    }
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease;
+    z-index: 2000;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    text-align: center;
+    max-width: 90%;
+    animation: fadeUp 0.4s ease;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 20px var(--gold);
+    margin-bottom: 25px;
+}
+
+.lightbox-content h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.lightbox-content p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= HAMBURGER ================= */
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger actif (croix) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menu mobile */
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.95);
+  padding-top: 100px;
+  text-align: center;
+  gap: 40px;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+}
+
+.nav-links.open li a {
+  font-size: 24px;
+  color: var(--gold);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: flex;
+    margin-left: 160px;
+    padding-right: 10px;
+  }
+  .cinema{
+    margin-top: 150px;
+  }
+
+  .nav-links {
+    display: none;
+    transform: translateX(100%);
+  }
+
+  
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+footer {
+  background: black;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  margin-top: auto;
+}
