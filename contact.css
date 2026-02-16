@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+﻿/* ================= RESET ================= */
 
 * {
   margin: 0;
@@ -144,7 +144,7 @@
     0 0 25px rgba(200,164,138,0.6);
 }
 
-/* Icône */
+/* IcÃ´ne */
 .contact-card i {
   font-size: 46px;
   color: #d8b26a;
@@ -329,7 +329,7 @@ footer {
   
   .hamburger {
     display: flex;
-    margin-left: 160px;
+    margin-left: 130px;
     padding-right: 10px;
   }
 
@@ -358,3 +358,13 @@ a{
     font-size: 28px;
   }
 }
+
+/* Espace entre la navbar et les titres h1 */
+h1 {
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  h1 { margin-top: 30px; }
+}
+

@@ -1,6 +1,6 @@
-
+﻿
 /* ================= RESET ================= */
-/* Réinitialisation des marges et padding par défaut pour une base cohérente */
+/* RÃ©initialisation des marges et padding par dÃ©faut pour une base cohÃ©rente */
 
 * {
   margin: 0;
@@ -9,7 +9,7 @@
 }
 
 /* ================= VARIABLES ================= */
-/* Définition des variables CSS pour les couleurs */
+/* DÃ©finition des variables CSS pour les couleurs */
 
 :root {
   --gold: #d8b26a;
@@ -111,11 +111,21 @@ body {
 }
 
 .gallery h1 {
+    margin-top: 50px;
     font-size: 46px;
     letter-spacing: 6px;
     margin-bottom: 12px;
     text-shadow: 0 0 1px var(--gold), 0 0 10px var(--gold), 0 0 10px var(--gold);
     animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Espace entre la navbar et les titres h1 */
+h1 {
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    h1 { margin-top: 30px; }
 }
 
 @keyframes glow {
@@ -296,6 +306,7 @@ body {
     }
     
     .gallery h1{
+        margin-top: 30px;
         font-size: 34px;
         letter-spacing: 4px;
     }
@@ -531,7 +542,7 @@ body {
 
   .hamburger {
     display: flex;
-    margin-left: 160px;
+    margin-left: 130px;
     padding-right: 10px;
   }
   .cinema{
@@ -561,3 +572,31 @@ footer {
   font-size: 14px;
   margin-top: auto;
 }
+@media (max-width: 768px) {
+  
+  .hamburger {
+    display: flex;
+    margin-left: 130px;
+    padding-right: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    transform: translateX(100%);
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
