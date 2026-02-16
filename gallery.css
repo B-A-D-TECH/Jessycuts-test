@@ -542,8 +542,8 @@ h1 {
 
   .hamburger {
     display: flex;
-    margin-left: 130px;
-    padding-right: 10px;
+    margin-left: auto;
+    padding-right: 0;
   }
   .cinema{
     margin-top: 150px;
@@ -576,8 +576,8 @@ footer {
   
   .hamburger {
     display: flex;
-    margin-left: 130px;
-    padding-right: 10px;
+    margin-left: auto;
+    padding-right: 0;
   }
 
   .nav-links {

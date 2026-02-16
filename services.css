@@ -340,8 +340,8 @@ footer {
   
   .hamburger {
     display: flex;
-    margin-left: 130px;
-    padding-right: 10px;
+    margin-left: auto;
+    padding-right: 0;
   }
 
   .nav-links {
