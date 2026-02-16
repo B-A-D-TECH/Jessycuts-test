@@ -113,6 +113,7 @@ body {
 .gallery h1 {
     font-size: 46px;
     letter-spacing: 6px;
+    margin-bottom: 12px;
     text-shadow: 0 0 1px var(--gold), 0 0 10px var(--gold), 0 0 10px var(--gold);
     animation: glow 1.5s ease-in-out infinite alternate;
 }
@@ -126,6 +127,7 @@ body {
     color: #aaa;
     font-size: 18px;
     margin-bottom: 80px;
+    letter-spacing: 3px;
 }
 
 /* ===== CINEMA ===== */
@@ -327,6 +329,9 @@ body {
     .frame{
         width: 200px;
         height: 270px;
+    }
+    body{
+        background: radial-gradient(circle at top, #111, #000);
     }
     
     .cinema-track{
