@@ -108,10 +108,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxPrice = document.getElementById('lightbox-price');
   const lightboxDesc = document.getElementById('lightbox-desc');
   const closeBtn = document.querySelector('.close');
 
   frames.forEach(img => {
+    const frame = img.closest('.frame');
+    const titleText = img.dataset.title || '';
+    const priceText = img.dataset.price || '';
+    if (frame && !frame.querySelector('.frame-info') && (titleText || priceText)) {
+      const info = document.createElement('div');
+      info.className = 'frame-info';
+
+      if (titleText) {
+        const title = document.createElement('h3');
+        title.textContent = titleText;
+        info.appendChild(title);
+      }
+
+      if (priceText) {
+        const price = document.createElement('span');
+        price.className = 'frame-price';
+        price.textContent = priceText;
+        info.appendChild(price);
+      }
+
+      frame.appendChild(info);
+    }
+
     img.addEventListener('click', () => {
       if (isDraggingGallery || isSwipingGallery) {
         return;
@@ -119,6 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.add('active');
       lightboxImg.src = img.src;
       lightboxTitle.textContent = img.dataset.title;
+      if (lightboxPrice) {
+        lightboxPrice.textContent = img.dataset.price || '';
+        lightboxPrice.style.display = img.dataset.price ? '' : 'none';
+      }
       lightboxDesc.textContent = img.dataset.desc;
     });
   });
