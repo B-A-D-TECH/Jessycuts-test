@@ -50,9 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
 
     // Scroll interaction desktop
-    window.addEventListener('wheel', (e) => {
+    // only respond when the cursor is over the gallery track, and prevent the
+    // wheel from scrolling the rest of the page
+    track.addEventListener('wheel', (e) => {
+      e.preventDefault();
       scrollVelocity += e.deltaY * 0.002;
-    });
+    }, { passive: false });
 
     // Hover pause desktop
     track.addEventListener('mouseenter', () => speed = 0);
@@ -67,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     track.addEventListener('touchmove', (e) => {
+      // prevent vertical page scrolling when swiping horizontally on the
+      // gallery
+      e.preventDefault();
       const x = e.touches[0].clientX;
       const delta = x - touchLastX;
       if (Math.abs(x - touchStartX) > 8) {
@@ -75,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       position += delta;
       scrollVelocity = -delta * 0.15;
       touchLastX = x;
-    }, { passive: true });
+    }, { passive: false });
 
     track.addEventListener('touchend', () => {
       setTimeout(() => {
@@ -141,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
       lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
       lightboxImg.src = img.src;
       lightboxTitle.textContent = img.dataset.title;
       if (lightboxPrice) {
@@ -153,11 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeBtn.addEventListener('click', () => {
     lightbox.classList.remove('active');
+    document.body.style.overflow = '';
   });
 
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove('active');
+      document.body.style.overflow = '';
     }
   });
 

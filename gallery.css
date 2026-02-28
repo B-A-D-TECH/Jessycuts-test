@@ -86,6 +86,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    /* disable any accidental horizontal scroll caused by the wide cinema track */
+    overflow-x: hidden;
+}
+
 body {
     background: radial-gradient(circle at top, #111, #000);
     color: #fff;
@@ -146,6 +151,9 @@ h1 {
     width: 100%;
     overflow: hidden;
     position: relative;
+    /* prevent touch/scroll events from propagating to the document and
+       causing the whole page to shift when the user scrolls the gallery */
+    overscroll-behavior: contain;
 }
 
 .cinema-track {
